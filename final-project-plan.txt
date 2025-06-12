@@ -1,0 +1,125 @@
+**********************************
+**                              **
+**       LISA'S ICE CREAM       **
+**                              **
+**********************************
+Welcome to Lisa's Ice Cream!
+
+Would you like to buy an ice cream Y or N? -> If a user enters anything rather than y/Y or n/N, prompt the user again with the message: Please enter letter "Y" or letter "N":
+If n/N, display the message, Thank you for coming, bye!, and end the program.
+
+Would you like to buy an ice cream Y or N? y -> If a user enters anything rather than y/Y or n/N, prompt the user again with the message: Please enter letter "Y" or letter "N": 
+
+If y/Y, display the flavor menu below and prompt the user to choose.
+
+1) Fruit
+2) Savory
+3) Chocolate, nuts, and other sweets
+
+Which flavor would you like? 1 -> If the user enters anything rather than the numbers on the menu, prompt the user again with the message: Please enter only the numbers on the menu:
+
+If a user chooses 1, display the fruit menu below and prompt the user for an input.
+1) Banana - $1.99
+2) Black raspberry - $1.99
+3) Cherry - includes variations (e.g. Amaretto cherry, black cherry) - $2.99
+4) Cinnamon apple - $1.25
+5) Grape - $3.0
+6) Lúcuma - a popular Peruvian ice cream flavor with an orange color and a sweet nutty taste - $4.99
+7) Mamey - $2.99
+8) Mango - $5.0
+9) Moon mist - a blend of grape, banana, and blue raspberry (or sometimes bubblegum) flavors - $10.99
+10) Passion fruit - $2.99
+11) Pumpkin - $2.99
+12) Raspberry ripple - consists of raspberry syrup injected into vanilla ice cream - $9.99
+13) Rum raisin - $4.99
+14) Strawberry - $3.99
+15) Strawberry cheesecake - $1.99
+16) Superman - $5.99
+17) Teaberry - $4.99
+18) Tiger tail - a flavor popular in Canada, consisting of orange-flavored ice cream with swirls of black licorice - $12.99
+19) Tutti frutti - $7.99
+20) Watermelon - $6.99
+
+Please choose your flavor: 
+
+If a user chooses 2, display the savory menu below and prompt the user for an input.
+1) Bacon - a modern invention, generally created by adding bacon to egg custard and freezing the mixture - $5.99
+2) Beer - $3.99
+3) Carrot - $2.99
+4) Cheese - $4.99
+5) Crab - a Japanese creation it is described as having a sweet taste; the island of Hokkaido Japan is known for manufacturing it - $6.99
+6) Creole cream cheese - $3.49
+7) Garlic - $2.49
+8) Oyster - $4.49
+9) Korean Sweet corn - $3.99
+10) Taro - $3.49
+11) Spundekäs - based on the German cream cheese of the same name - $4.49
+12) Ube (purple yam) - a popular ice cream flavor in the Philippines - $5.49
+
+Please choose your flavor: 
+
+If a user chooses 3, display the chocolate, nuts, and other sweets menu below and prompt the user for an input
+1) Biscuit Tortoni - an ice cream made with eggs and heavy cream, often containing chopped cherries or topped with minced almonds or crumbled acaroons - $3.99
+2) Blue moon - an ice cream flavor with bright blue coloring, available in the Upper Midwest of the United States - $4.99
+3) Bubblegum - $5.99
+4) Butter Brickle - the registered trademark of a toffee ice cream flavoring and of a toffee-centered chocolate-covered candy bar similar to the Heath bar - $6.99
+5) Butterscotch - $3.49
+6) Butter pecan - a smooth vanilla ice cream with a slight buttery flavor, with pecans added - $4.49
+7) Cake batter - $5.49
+8) Chocolate - $4.99
+9) Chocolate chip - vanilla base, with chunks of solid chocolate. Declining in popularity in the 2020s - $5.99
+10) Chocolate chip cookie dough - $6.99
+11) Coffee - $4.49
+12) Cookies and cream - $5.49
+13) Cotton candy - $6.49
+14) Dulce de leche - $4.99
+15) Earl Grey tea - $3.99
+16) Eggnog - $3.49
+17) French vanilla - $4.49
+18) Goody Goody Gum Drops - unique to New Zealand - $7.99
+19) Green tea - $4.99
+20) Halva - $5.49
+21) Hokey pokey - a flavor of ice cream in New Zealand, consisting of plain vanilla ice cream with small, solid lumps of honeycomb toffee - $6.49
+22) Maple - $4.99
+23) Mint chocolate chip - composed of mint ice cream with small chocolate chips - $5.99
+24) Moose tracks - $6.99
+25) Neapolitan - composed of vanilla, chocolate and strawberry ice cream together side by side - $7.49
+26) Pistachio - $5.49
+27) Peanut butter - $6.49
+28) Rocky road - composed of chocolate ice cream, nuts, and whole or diced marshmallows, or sometimes replaced with marshmallow creme, a more fluid version - $7.99
+29) Rose - $5.99
+30) Spumoni - a molded Italian ice cream made with layers of different colors and flavors, usually containing candied fruits and nuts - $6.49
+31) Stracciatella - $5.99
+32) Vanilla: 4.49
+
+Please choose your flavor: 
+
+
+1) Waffle Cone
+2) Sugar Cone
+3) Cake Cone
+4) Waffle Bowl
+5) Twin Cone
+6) Bubble Waffle Cone
+7) Chocolate Dipped Cone
+8) Pretzel Cone
+9) Gluten Free Cone
+10) Specialty Cone
+11) Jacketed Cone
+
+Please choose your cone: 
+
+Your ice cream:
+Cone -> Waffle Cone
+Flavor -> Banana
+
+Total cost: $5.20
+
+Would you like to buy another one? y or n: 
+
+If n/N, print out a message: Thank you for coming!
+
+If y/Y, repeat the process above.
+
+
+Refer to this similar project at this repo for help and hints: https://github.com/billyGithup/SandwichShop.git
