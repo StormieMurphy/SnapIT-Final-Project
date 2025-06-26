@@ -1,9 +1,9 @@
-// // const fs = require("fs");
-// // const cone = require("./ingredients/cone_types.json");
-// // const fruit = require("./ingredients/fruit_flavors.json");
-// // const savory = require("./ingredients/savory_flavor.json");
-// // const chocolate = require("./ingredients/chocoloate_and_other_flavors.json");
-const prompt = require("prompt-sync")({ sigint: true });
+const fs = require("fs");
+// const cone = require("./ingredients/cone_types.json");
+// const fruit = require("./ingredients/fruit_flavors.json");
+// const savory = require("./ingredients/savory_flavor.json");
+// const chocolate = require("./ingredients/chocolate_and_other_flavors.json");
+// const prompt = require("prompt-sync")({ sigint: true });
 
 // // Function to display the menu and return the menu numbers as a string. This function also serves the concept of DRY (Don't Repeat Yourself) by avoiding code duplication.
 
@@ -43,9 +43,9 @@ const prompt = require("prompt-sync")({ sigint: true });
 
 // // Function to check if the input is a valid 'Y' or 'N'.
 
-// exports.checkYorN = function (input) {
-//   return "ynYN".includes(input) && input.length == 1;
-// };
+exports.checkYorN = function (input) {
+  return "ynYN".includes(input) && input.length == 1;
+};
 
 // // Function to choose a cone from the available options.
 // exports.chooseYourCone = () => {

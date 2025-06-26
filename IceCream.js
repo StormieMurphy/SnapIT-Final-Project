@@ -9,7 +9,7 @@
   // #savory;
   // #chocolate;
 
-   // Constructor to initialize the ice cream with the cone and flavor
+// Constructor to initialize the ice cream with the cone and flavor
 
   // constructor(cone, fruit, savory, chocolate) {
   //   this.#cone = cone;

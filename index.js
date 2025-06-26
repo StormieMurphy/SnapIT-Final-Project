@@ -24,19 +24,19 @@ console.log(welcomeStr);
 
 // Prompt a user for an input.
 
-let userInput = prompt("Would you like to make an order Y or N? ");
+let userInput = prompt("Would you like to buy an ice cream Y or N? ");
 
 // // If the user's input is invalid, keep asking until a valid input is provided.
 
-// while (!checkYorN(userInput)) {
-//   userInput = prompt('Please enter letter "Y" or letter "N": ');
-// }
+while (!checkYorN(userInput)) {
+  userInput = prompt('Please enter letter "Y" or letter "N": ');
+}
 
 // Check the user's input to whether or not run the program.
 
-// if (userInput.toLowerCase() == "n") {
-//   console.log("Thank you for coming, bye!");
-// } else {
+if (userInput.toLowerCase() == "n") {
+  console.log("Thank you for coming, bye!");
+} // else {
 //   // Get all the necessary data from the user to create an ice cream cone.
 //   const cone = chooseYourCone();
 //   const type = chooseYourFlavorType();
