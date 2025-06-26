@@ -159,10 +159,10 @@ const prompt = require("prompt-sync")({ sigint: true });
 //     let menuNumbers = "";
 
 //     // Read the chocolate_and_other_flavors.json file and split it into an array of flavor options.
-//     const chocolateList = fs
-//       .readFileSync(".\\ingredients\\chocolate_and_other_flavors.json", "utf8", { encoding: "utf8" })
-//       .split("\r\n")
-//       .slice(0, -1);
+    const chocolateList = fs
+      .readFileSync(".\\ingredients\\chocolate_and_other_flavors.json", "utf8", { encoding: "utf8" })
+      .split("\r\n")
+      .slice(0, -1);
 
 //     console.log();
 //     // Loop through the chocolateList and format each flavor option for display.
