@@ -39,7 +39,7 @@ if (userInput.toLowerCase() == "n") {
 } else {
 //   // Get all the necessary data from the user to create an ice cream cone.
   const cone = chooseYourCone();
-  // const type = chooseYourFlavorType();
+  const type = chooseYourFlavorType();
   // const fruit = chooseYourFruit();
   // const savory = chooseYourSavory();
   // const chocolate = chooseYourChocolate();

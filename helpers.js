@@ -70,33 +70,33 @@ exports.chooseYourCone = () => {
 
 //  // Function to choose flavor category (fruit, savory, chocolate and other) from the available options.
 
-// exports.chooseYourFlavorType = () => {
+exports.chooseYourFlavorType = () => {
 
-//   //Convert the flavor type object into an array of entries and display the menu.
+  //Convert the flavor type object into an array of entries and display the menu.
 
-//   const types = Object.entries(type);
+  const types = Object.entries(type);
 
-//   //Show the menu and prompt the user to choose a flavor type.
+  //Show the menu and prompt the user to choose a flavor type.
 
-//   const menuNumbers = showMenu(types);
-//   const typeChoice = promptUser(
-//   "Which flavor would you like?",
-//   "Please enter only the numbers on the menu: ",
-//   menuNumbers
-//   );
+  const menuNumbers = showMenu(types);
+  const typeChoice = promptUser(
+  "Which flavor would you like? ",
+  "Please enter only the numbers on the menu: ",
+  menuNumbers
+  );
 
-// return types[parseInt(typeChoice) - 1];
+return types[parseInt(typeChoice) - 1];
 
-// };
+};
 
-// //  // Convert the chosen flavor category object into an array of entries and display the menu. Make sure it displays a different menu depending on what flavor category the user chooses.
+// // Convert the chosen flavor category object into an array of entries and display the menu. Make sure it displays a different menu depending on what flavor category the user chooses.
 
-// //  // Show the menu and prompt the user to choose fruit flavor.
+// // Show the menu and prompt the user to choose fruit flavor.
 // exports.chooseYourFruit = () => {
 //   try {
 //     let menuNumbers = "";
 
-// //     // Read the fruit_flavors.json file and split it into an array of flavor options.
+// // Read the fruit_flavors.json file and split it into an array of flavor options.
 //     const fruitList = fs
 //       .readFileSync(".\\ingredients\\fruit_flavors.json", "utf8", { encoding: "utf8" })
 //       .split("\r\n")
