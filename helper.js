@@ -9,6 +9,10 @@
 // Ensure the choice is a single character and is included in the menu numbers.
 
 // Function to check if the input is a valid 'Y' or 'N'.
+function checkYorN(userInput)
+{   
+    user
+}
 
 // Function to choose a cone from the available options.
 
