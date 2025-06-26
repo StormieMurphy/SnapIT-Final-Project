@@ -1,9 +1,10 @@
 const fs = require("fs");
-// const cone = require("./ingredients/cone_types.json");
-// const fruit = require("./ingredients/fruit_flavors.json");
-// const savory = require("./ingredients/savory_flavor.json");
-// const chocolate = require("./ingredients/chocolate_and_other_flavors.json");
-// const prompt = require("prompt-sync")({ sigint: true });
+const cone = require("./ingredients/cone_types.json");
+const type = require("./ingredients/flavor_types.json");
+const fruit = require("./ingredients/fruit_flavors.json");
+const savory = require("./ingredients/savory_flavor.json");
+const chocolate = require("./ingredients/chocolate_and_other_flavors.json");
+const prompt = require("prompt-sync")({ sigint: true });
 
 // // Function to display the menu and return the menu numbers as a string. This function also serves the concept of DRY (Don't Repeat Yourself) by avoiding code duplication.
 
@@ -47,10 +48,10 @@ exports.checkYorN = function (input) {
   return "ynYN".includes(input) && input.length == 1;
 };
 
-// // Function to choose a cone from the available options.
+// Function to choose a cone from the available options.
 // exports.chooseYourCone = () => {
 //   // Convert the cone object into an array of entries and display the menu.
-//   const buns = Object.entries(cone);
+//   const cones = Object.entries(cone);
 
 //   // Show the menu and prompt the user to choose a cone.
 //   const menuNumbers = showMenu(cones);
@@ -68,6 +69,25 @@ exports.checkYorN = function (input) {
 // };
 
 //  // Function to choose flavor category (fruit, savory, chocolate and other) from the available options.
+
+// exports.chooseYourFlavorType = () => {
+
+  //Convert the flavor type object into an array of entries and display the menu.
+
+  // const types = Object.entries(type);
+
+  //Show the menu and prompt the user to choose a flavor type.
+
+  // const menuNumbers = showMenu(types);
+  // const typeChoice = promptUser(
+  // "Which flavor would you like?",
+  // "Please enter only the numbers on the menu: ",
+  // menuNumbers
+  // );
+
+// return types[parseInt(typeChoice) - 1];
+
+// }
 
 //  // Convert the chosen flavor category object into an array of entries and display the menu. Make sure it displays a different menu depending on what flavor category the user chooses.
 
@@ -196,15 +216,14 @@ exports.checkYorN = function (input) {
 
 // Function to calculate the total cost of the ordered ice cream cone.
 
-// exports.getTotalCost = (orderedSandwich) => {
-//   let vegieTotalCost = 0;
+// exports.getTotalCost = (orderedIceCream) => {
 
 //  // Calculate the total cost of the ice cream cone by adding the cone and flavor and return it as a string formatted to two decimal places.
 
 //   return (
-//     orderedSandwich.bun.pop() +
-//     orderedSandwich.cheese.pop() +
-//     parseFloat(orderedSandwich.meat.slice(-4)) +
-//     vegieTotalCost
+//     orderedIceCream.cone.pop() +
+//     parseFloat(orderedIceCream.fruit.slice(-4)) +
+//     parseFloat(orderedIceCream.savory.slice(-4)) +
+//     parseFloat(orderedIceCream.chocolate.slice(-4)) +
 //   ).toFixed(2);
 // };

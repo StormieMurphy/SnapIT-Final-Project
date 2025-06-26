@@ -5,14 +5,16 @@
   // Private fields to store the properties of the ice cream
 
   // #cone;
+  // #type;
   // #fruit;
   // #savory;
   // #chocolate;
 
 // Constructor to initialize the ice cream with the cone and flavor
 
-  // constructor(cone, fruit, savory, chocolate) {
+  // constructor(cone, type, fruit, savory, chocolate) {
   //   this.#cone = cone;
+  //   this.#type = type;
   //   this.#fruit = fruit;
   //   this.#savory = savory;
   //   this.#chocolate = chocolate;
@@ -21,6 +23,9 @@
   // get cone() {
   //   return this.#cone;
   // }
+  // get type() {
+ //    return this.#type;
+// }
   // get fruit() {
   //   return this.#fruit;
   // }
@@ -35,6 +40,7 @@
 
   // showInfo() {
   //   const cone = this.#cone[0];
+  //   const type = this.#type[0];
   //   const fruit = this.#fruit.slice(0, -5);
   //   const savory = this.#savory.slice(0, -5);
   //   const chocolate = this.#chocolate.slice(0, -5);
