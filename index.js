@@ -36,14 +36,14 @@ while (!checkYorN(userInput)) {
 
 if (userInput.toLowerCase() == "n") {
   console.log("Thank you for coming, bye!");
-} // else {
+} else {
 //   // Get all the necessary data from the user to create an ice cream cone.
-//   const cone = chooseYourCone();
-//   const type = chooseYourFlavorType();
-//   const fruit = chooseYourFruit();
-//   const savory = chooseYourSavory();
-//   const chocolate = chooseYourChocolate();
-// }
+  const cone = chooseYourCone();
+  // const type = chooseYourFlavorType();
+  // const fruit = chooseYourFruit();
+  // const savory = chooseYourSavory();
+  // const chocolate = chooseYourChocolate();
+}
 
 // Instantiate a new iceCream object with the user's choices.
 
