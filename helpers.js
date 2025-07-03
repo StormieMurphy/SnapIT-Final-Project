@@ -90,12 +90,12 @@ return types[parseInt(typeChoice) - 1];
 };
 
 // // Convert the chosen flavor category object into an array of entries and display the menu. Make sure it displays a different menu depending on what flavor category the user chooses.
-
+// switch (menuNumbers)
 // // Show the menu and prompt the user to choose fruit flavor.
 // exports.chooseYourFruit = () => {
 //   try {
 //     let menuNumbers = "";
-
+// case 1:
 // // Read the fruit_flavors.json file and split it into an array of flavor options.
 //     const fruitList = fs
 //       .readFileSync(".\\ingredients\\fruit_flavors.json", "utf8", { encoding: "utf8" })
@@ -131,7 +131,8 @@ return types[parseInt(typeChoice) - 1];
 //     console.log("Error opening fruit_flavors.txt file!");
 //   }
 // };
-
+// break;
+// case 2:
 // // // Show the menu and prompt the user to choose savory flavor.
 // exports.chooseYourSavory = () => {
 //   try {
@@ -172,7 +173,8 @@ return types[parseInt(typeChoice) - 1];
 //     console.log("Error opening savory_flavor.txt file!");
 //   }
 // };
-
+// break;
+// case 3:
 // // // Show the menu and prompt the user to choose chocolate/other flavor.
 // exports.chooseYourChocolate = () => {
 //   try {
@@ -213,7 +215,7 @@ return types[parseInt(typeChoice) - 1];
 //     console.log("Error opening chocolate_and_other_flavors.txt file!");
 //   }
 // };
-
+// break;
 // // Function to calculate the total cost of the ordered ice cream cone.
 
 // // exports.getTotalCost = (orderedIceCream) => {
