@@ -2,11 +2,11 @@
 const prompt = require("prompt-sync")({ sigint: true });
 const {
   checkYorN,
-  chooseYourCone,
   chooseYourFlavorType,
   chooseYourFruit,
   chooseYourSavory,
   chooseYourChocolate,
+  chooseYourCone,
   getTotalCost
 } = require("./helpers.js");
 const iceCream = require("./IceCream.js");
@@ -38,11 +38,21 @@ if (userInput.toLowerCase() == "n") {
   console.log("Thank you for coming, bye!");
 } else {
 //   // Get all the necessary data from the user to create an ice cream cone.
-  const cone = chooseYourCone();
   const type = chooseYourFlavorType();
-  // const fruit = chooseYourFruit();
-  // const savory = chooseYourSavory();
-  // const chocolate = chooseYourChocolate();
+  switch(chooseYourFlavorType) {
+    case "1":
+        const fruit = chooseYourFruit();
+        break;
+    case "2": 
+        const savory = chooseYourSavory();
+        break;
+    case "3": 
+        const chocolate = chooseYourChocolate();
+        break;
+    default:
+        console.log("Please enter only the numbers on the menu: ");
+  }
+  const cone = chooseYourCone();
 }
 
 // Instantiate a new iceCream object with the user's choices.
