@@ -85,7 +85,7 @@ exports.chooseYourFlavorType = () => {
   menuNumbers
   );
 
-  return types[parseInt(typeChoice)];
+  return typeChoice;
 
 };
 
@@ -107,7 +107,7 @@ exports.chooseYourFruit = () => {
 
 //  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-  return fruit_flavors[parseInt(fruitChoice)];
+  return fruitChoice;
 };
 // // // Show the menu and prompt the user to choose savory flavor.
 exports.chooseYourSavory = () => {
@@ -125,7 +125,7 @@ exports.chooseYourSavory = () => {
 
 //  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-  return savory_flavors[parseInt(savoryChoice)];
+  return savoryChoice;
 };
 // // // Show the menu and prompt the user to choose chocolate/other flavor.
 exports.chooseYourChocolate = () => {
@@ -143,7 +143,7 @@ exports.chooseYourChocolate = () => {
 
 //  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-  return chocolate_and_other_flavors[parseInt(chocolateChoice)];
+  return chocolateChoice;
 };
 
 // // Function to calculate the total cost of the ordered ice cream cone.

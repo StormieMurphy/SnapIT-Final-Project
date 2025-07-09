@@ -40,15 +40,14 @@ if (userInput.toLowerCase() == "n") {
   //   // Get all the necessary data from the user to create an ice cream cone.
   const type = chooseYourFlavorType();
   switch (type) {
-    case 1:
+    case "1":
       chooseYourFruit();
       break;
-    case 2:
+    case "2":
       chooseYourSavory();
       break;
-    case 3:
+    case "3":
       chooseYourChocolate();
-      const chocolate = userInput;
       break;
     default:
       console.log("Please enter only the numbers on the menu: ");
