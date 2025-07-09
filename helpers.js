@@ -65,7 +65,7 @@ exports.chooseYourCone = () => {
 
 //  // If the user chooses a cone from the menu's number, return the selected cone.
 
-  return cones[parseInt(coneChoice) - 1];
+  return cones[parseInt(coneChoice)];
 };
 
 //  // Function to choose flavor category (fruit, savory, chocolate and other) from the available options.
@@ -85,130 +85,65 @@ exports.chooseYourFlavorType = () => {
   menuNumbers
   );
 
-  return types[parseInt(typeChoice) - 1];
+  return types[parseInt(typeChoice)];
 
 };
 
 // // Convert the chosen flavor category object into an array of entries and display the menu. Make sure it displays a different menu depending on what flavor category the user chooses.
 // // Show the menu and prompt the user to choose fruit flavor.
 exports.chooseYourFruit = () => {
-  try {
-    let menuNumbers = "";
+//   // Convert the fruit object into an array of entries and display the menu.
+  const fruit_flavors = Object.entries(fruit);
 
-// Read the fruit_flavors.json file and split it into an array of flavor options.
-    const fruitList = fs
-      .readFileSync(".\\ingredients\\fruit_flavors.json", "utf8", { encoding: "utf8" })
-      .split("\r\n")
-      .slice(0, -1);
+//   // Show the menu and prompt the user to choose a fruit flavor.
+  const menuNumbers = showMenu(fruit_flavors);
 
-    console.log();
-// //     // Loop through the fruitList and format each flavor option for display.
-    for (index = 0; index < fruitList.length; index++) {
-      const fruitMenu = [
-        `${index + 1}. `,
-        fruitList[index].slice(0, -5),
-        " - $",
-        fruitList[index].slice(-4, fruitList[index].length)
-      ].join("");
-      menuNumbers += (index + 1).toString();
-      console.log(fruitMenu);
-    }
-    console.log();
+//   // Prompt the user for their choice, ensuring it matches the menu numbers.
+  const fruitChoice = promptUser(
+    "Please choose your flavor: ",
+    "Please enter only the numbers on the menu: ",
+    menuNumbers
+  );
 
-// //     // Prompt the user to choose flavor, ensuring it matches the menu numbers.
-    const fruitChoice = promptUser(
-      "Please choose your flavor: ",
-      "Please enter only the numbers on the menu: ",
-      menuNumbers
-    );
-  
-// //     // If the user chooses a flavor from the menu's number, return the selected flavor.
-    return fruitList[parseInt(fruitChoice) - 1];
+//  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-// //     // If there's an error reading the fruit_flavors.txt file, log an error message.
-  } catch (error) {
-    console.log("Error opening fruit_flavors.txt file!");
-  }
+  return fruit_flavors[parseInt(fruitChoice)];
 };
 // // // Show the menu and prompt the user to choose savory flavor.
 exports.chooseYourSavory = () => {
-  try {
-    let menuNumbers = "";
+  const savory_flavors = Object.entries(savory);
 
-// //     // Read the savory_flavor.json file and split it into an array of flavor options.
-    const savoryList = fs
-      .readFileSync(".\\ingredients\\savory_flavor.json", "utf8", { encoding: "utf8" })
-      .split("\r\n")
-      .slice(0, -1);
+//   // Show the menu and prompt the user to choose a fruit flavor.
+  const menuNumbers = showMenu(savory_flavors);
 
-    console.log();
-// //     // Loop through the savoryList and format each flavor option for display.
-    for (index = 0; index < savoryList.length; index++) {
-      const savoryMenu = [
-        `${index + 1}. `,
-        savoryList[index].slice(0, -5),
-        " - $",
-        savoryList[index].slice(-4, savoryList[index].length)
-      ].join("");
-      menuNumbers += (index + 1).toString();
-      console.log(savoryMenu);
-    }
-    console.log();
+//   // Prompt the user for their choice, ensuring it matches the menu numbers.
+  const savoryChoice = promptUser(
+    "Please choose your flavor: ",
+    "Please enter only the numbers on the menu: ",
+    menuNumbers
+  );
 
-// //     // Prompt the user to choose flavor, ensuring it matches the menu numbers.
-    const savoryChoice = promptUser(
-      "Please choose your flavor: ",
-      "Please enter only the numbers on the menu: ",
-      menuNumbers
-    );
-  
-// //     // If the user chooses a flavor from the menu's number, return the selected flavor.
-    return savoryList[parseInt(savoryChoice) - 1];
+//  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-// //     // If there's an error reading the savory_flavor.txt file, log an error message.
-  } catch (error) {
-    console.log("Error opening savory_flavor.txt file!");
-  }
+  return savory_flavors[parseInt(savoryChoice)];
 };
 // // // Show the menu and prompt the user to choose chocolate/other flavor.
 exports.chooseYourChocolate = () => {
-  try {
-    let menuNumbers = "";
+    const chocolate_and_other_flavors = Object.entries(chocolate);
 
-// //     // Read the chocolate_and_other_flavors.json file and split it into an array of flavor options.
-    const chocolateList = fs
-      .readFileSync(".\\ingredients\\chocolate_and_other_flavors.json", "utf8", { encoding: "utf8" })
-      .split("\r\n")
-      .slice(0, -1);
+//   // Show the menu and prompt the user to choose a fruit flavor.
+  const menuNumbers = showMenu(chocolate_and_other_flavors);
 
-    console.log();
-// //     // Loop through the chocolateList and format each flavor option for display.
-    for (index = 0; index < chocolateList.length; index++) {
-      const chocolateMenu = [
-        `${index + 1}. `,
-        chocolateList[index].slice(0, -5),
-        " - $",
-        chocolateList[index].slice(-4, chocolateList[index].length)
-      ].join("");
-      menuNumbers += (index + 1).toString();
-      console.log(chocolateMenu);
-    }
-    console.log();
+//   // Prompt the user for their choice, ensuring it matches the menu numbers.
+  const chocolateChoice = promptUser(
+    "Please choose your flavor: ",
+    "Please enter only the numbers on the menu: ",
+    menuNumbers
+  );
 
-// //     // Prompt the user to choose flavor, ensuring it matches the menu numbers.
-    const chocolateChoice = promptUser(
-      "Please choose your flavor: ",
-      "Please enter only the numbers on the menu: ",
-      menuNumbers
-    );
-  
-// //     // If the user chooses a flavor from the menu's number, return the selected flavor.
-    return chocolateList[parseInt(chocolateChoice) - 1];
+//  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-//     // If there's an error reading the savory_flavor.txt file, log an error message.
-  } catch (error) {
-    console.log("Error opening chocolate_and_other_flavors.txt file!");
-  }
+  return chocolate_and_other_flavors[parseInt(chocolateChoice)];
 };
 
 // // Function to calculate the total cost of the ordered ice cream cone.

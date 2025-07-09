@@ -37,29 +37,39 @@ while (!checkYorN(userInput)) {
 if (userInput.toLowerCase() == "n") {
   console.log("Thank you for coming, bye!");
 } else {
-//   // Get all the necessary data from the user to create an ice cream cone.
+  //   // Get all the necessary data from the user to create an ice cream cone.
   const type = chooseYourFlavorType();
-  switch(chooseYourFlavorType) {
-    case "1":
-        const fruit = chooseYourFruit();
-        break;
-    case "2": 
-        const savory = chooseYourSavory();
-        break;
-    case "3": 
-        const chocolate = chooseYourChocolate();
-        break;
+  switch (type) {
+    case 1:
+      chooseYourFruit();
+      break;
+    case 2:
+      chooseYourSavory();
+      break;
+    case 3:
+      chooseYourChocolate();
+      const chocolate = userInput;
+      break;
     default:
-        console.log("Please enter only the numbers on the menu: ");
+      console.log("Please enter only the numbers on the menu: ");
   }
+
+  // if (type == 1) {
+  //   const fruit = chooseYourFruit();
+  // } else if (type == 2) {
+  //   const savory = chooseYourSavory();
+  // } else if (type == 3) {
+  //   const chocolate = chooseYourChocolate();
+  // }
   const cone = chooseYourCone();
+
 }
 
 // Instantiate a new iceCream object with the user's choices.
 
-  // const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
+// const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
 
-  // console.log("Your ice cream is being made. Please wait...");
+// console.log("Your ice cream is being made. Please wait...");
 
 
 // Simulate a delay to mimic the ice cream preparation time.
