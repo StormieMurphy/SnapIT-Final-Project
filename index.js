@@ -53,30 +53,23 @@ if (userInput.toLowerCase() == "n") {
       console.log("Please enter only the numbers on the menu: ");
   }
 
-  // if (type == 1) {
-  //   const fruit = chooseYourFruit();
-  // } else if (type == 2) {
-  //   const savory = chooseYourSavory();
-  // } else if (type == 3) {
-  //   const chocolate = chooseYourChocolate();
-  // }
-  const cone = chooseYourCone();
+  chooseYourCone();
 
 }
 
 // Instantiate a new iceCream object with the user's choices.
 
-// const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
+const orderedIceCream = new iceCream(coneChoice, fruitChoice, savoryChoice, chocolateChoice);
 
-// console.log("Your ice cream is being made. Please wait...");
+console.log("Your ice cream is being made. Please wait...");
 
 
 // Simulate a delay to mimic the ice cream preparation time.
 
-//  setTimeout(() => {
-//     console.log("Your ice cream is ready!");
-//     orderedIceCream.showInfo();
-//     console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
-//   }, 3000);
+ setTimeout(() => {
+    console.log("Your ice cream is ready!");
+    orderedIceCream.showInfo();
+    console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
+  }, 3000);
 
 

@@ -65,7 +65,7 @@ exports.chooseYourCone = () => {
 
 //  // If the user chooses a cone from the menu's number, return the selected cone.
 
-  return cones[parseInt(coneChoice)];
+  return coneChoice;
 };
 
 //  // Function to choose flavor category (fruit, savory, chocolate and other) from the available options.
@@ -148,14 +148,13 @@ exports.chooseYourChocolate = () => {
 
 // // Function to calculate the total cost of the ordered ice cream cone.
 
-// // exports.getTotalCost = (orderedIceCream) => {
+exports.getTotalCost = (orderedIceCream) => {
 
 // //  // Calculate the total cost of the ice cream cone by adding the cone and flavor and return it as a string formatted to two decimal places.
 
-// //   return (
-// //     orderedIceCream.cone.pop() +
-// //     parseFloat(orderedIceCream.fruit.slice(-4)) +
-// //     parseFloat(orderedIceCream.savory.slice(-4)) +
-// //     parseFloat(orderedIceCream.chocolate.slice(-4)) +
-// //   ).toFixed(2);
-// // };
+  return 
+    orderedIceCream.cone.pop() +
+    orderedIceCream.fruit.pop() +
+    orderedIceCream.savory.pop() +
+    orderedIceCream.chocolate.pop()
+};
