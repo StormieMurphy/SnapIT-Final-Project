@@ -47,9 +47,10 @@ class iceCream {
 
    // Log the ice cream details to the console
 
- console.log(
-      `\nYour ice cream:\nCone - ${cone}\nFruit flavor - ${fruit}\nSavory flavor - ${savory}\nChocolate or other flavor - ${chocolate}`
-    );
+   console.log(`\nYour ice cream:\nCone -> ${cone}`);
+   if (fruit) console.log(`Flavor -> ${fruit}`);
+   if (savory) console.log(`Flavor -> ${savory}`);
+   if (chocolate) console.log(`Flavor -> ${chocolate}`);
   }
 }
    // Export the iceCream class so it can be used in other files

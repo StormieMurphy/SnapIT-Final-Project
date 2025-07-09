@@ -38,21 +38,44 @@ if (userInput.toLowerCase() == "n") {
   console.log("Thank you for coming, bye!");
 } else {
 //   // Get all the necessary data from the user to create an ice cream cone.
+while (userInput.toLowerCase() === "y") {
   const type = chooseYourFlavorType();
-  switch(chooseYourFlavorType) {
-    case "1":
-        const fruit = chooseYourFruit();
-        break;
-    case "2": 
-        const savory = chooseYourSavory();
-        break;
-    case "3": 
-        const chocolate = chooseYourChocolate();
-        break;
-    default:
-        console.log("Please enter only the numbers on the menu: ");
+
+  let fruit = "";
+  let savory = "";
+  let chocolate = "";
+
+  if (type[0] === "Fruit") {
+    fruit = chooseYourFruit();
+  } else if (type[0] === "Savory") {
+    savory = chooseYourSavory();
+  } else {
+    chocolate = chooseYourChocolate();
   }
+
   const cone = chooseYourCone();
+
+  const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
+
+  console.log("Your ice cream is being made. Please wait...");
+
+  setTimeout(() => {
+    console.log("Your ice cream is ready!");
+    orderedIceCream.showInfo();
+    console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
+  }, 2000);
+
+  userInput = prompt("Would you like to buy another one? y or n: ");
+  while (!checkYorN(userInput)) {
+    userInput = prompt('Please enter letter "Y" or letter "N": ');
+  }
+
+  if (userInput.toLowerCase() === "n") {
+    console.log("Thank you for coming!");
+  }
+}
+
+  
 }
 
 // Instantiate a new iceCream object with the user's choices.
@@ -69,5 +92,3 @@ if (userInput.toLowerCase() == "n") {
 //     orderedIceCream.showInfo();
 //     console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
 //   }, 3000);
-
-

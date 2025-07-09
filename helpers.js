@@ -96,10 +96,7 @@ exports.chooseYourFruit = () => {
     let menuNumbers = "";
 
 // Read the fruit_flavors.json file and split it into an array of flavor options.
-    const fruitList = fs
-      .readFileSync(".\\ingredients\\fruit_flavors.json", "utf8", { encoding: "utf8" })
-      .split("\r\n")
-      .slice(0, -1);
+const fruitList = Object.entries(fruit);
 
     console.log();
 // //     // Loop through the fruitList and format each flavor option for display.
@@ -116,19 +113,18 @@ exports.chooseYourFruit = () => {
     console.log();
 
 // //     // Prompt the user to choose flavor, ensuring it matches the menu numbers.
-    const fruitChoice = promptUser(
-      "Please choose your flavor: ",
-      "Please enter only the numbers on the menu: ",
-      menuNumbers
-    );
-  
-// //     // If the user chooses a flavor from the menu's number, return the selected flavor.
-    return fruitList[parseInt(fruitChoice) - 1];
+const fruitChoice = promptUser(
+  "Please choose your flavor: ",
+  "Please enter only the numbers on the menu: ",
+  menuNumbers
+);
 
-// //     // If there's an error reading the fruit_flavors.txt file, log an error message.
-  } catch (error) {
-    console.log("Error opening fruit_flavors.txt file!");
-  }
+const [name, price] = fruitList[parseInt(fruitChoice) - 1];
+return `${name} - $${price}`;
+} catch (error) 
+{
+  console.log("Error reading fruit_flavors.json file!");
+}
 };
 // // // Show the menu and prompt the user to choose savory flavor.
 exports.chooseYourSavory = () => {
@@ -211,16 +207,19 @@ exports.chooseYourChocolate = () => {
   }
 };
 
-// // Function to calculate the total cost of the ordered ice cream cone.
+exports.getTotalCost = (orderedIceCream) => {
+  const coneCost = parseFloat(orderedIceCream.cone[1]);
+  let flavorCost = 0;
 
-// // exports.getTotalCost = (orderedIceCream) => {
+  if (orderedIceCream.fruit) {
+    flavorCost += parseFloat(orderedIceCream.fruit.slice(-4));
+  }
+  if (orderedIceCream.savory) {
+    flavorCost += parseFloat(orderedIceCream.savory.slice(-4));
+  }
+  if (orderedIceCream.chocolate) {
+    flavorCost += parseFloat(orderedIceCream.chocolate.slice(-4));
+  }
 
-// //  // Calculate the total cost of the ice cream cone by adding the cone and flavor and return it as a string formatted to two decimal places.
-
-// //   return (
-// //     orderedIceCream.cone.pop() +
-// //     parseFloat(orderedIceCream.fruit.slice(-4)) +
-// //     parseFloat(orderedIceCream.savory.slice(-4)) +
-// //     parseFloat(orderedIceCream.chocolate.slice(-4)) +
-// //   ).toFixed(2);
-// // };
+  return (coneCost + flavorCost).toFixed(2);
+};
