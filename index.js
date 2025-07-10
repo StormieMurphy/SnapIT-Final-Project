@@ -38,7 +38,9 @@ while (!checkYorN(userInput)) {
 
 if (userInput.toLowerCase() == "n") {
   console.log("Thank you for coming, bye!");
-} else {
+  process.exit(0);
+} 
+
 //   // Get all the necessary data from the user to create an ice cream cone.
 while (userInput.toLowerCase() === "y") {
   const type = chooseYourFlavorType();
@@ -89,23 +91,10 @@ while (userInput.toLowerCase() === "y") {
 
   if (userInput.toLowerCase() === "n") {
     console.log("Thank you for coming!");
+    process.exit(0);
   }
 }
 
   
-}
-
-// Instantiate a new iceCream object with the user's choices.
-
-const orderedIceCream = new iceCream(coneChoice, fruitChoice, savoryChoice, chocolateChoice);
-
-console.log("Your ice cream is being made. Please wait...");
 
 
-// Simulate a delay to mimic the ice cream preparation time.
-
- setTimeout(() => {
-    console.log("Your ice cream is ready!");
-    orderedIceCream.showInfo();
-    console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
-  }, 3000);
