@@ -126,10 +126,6 @@ const fruitList = Object.entries(fruit);
 return fruit_flavors[parseInt(fruitChoice) - 1];
 };
 
-//catch (error) 
-{
-  console.log("Error reading fruit_flavors.json file!");
-};
 // // // Show the menu and prompt the user to choose savory flavor.
 exports.chooseYourSavory = () => {
   const savory_flavors = Object.entries(savory);
