@@ -61,26 +61,21 @@ while (userInput.toLowerCase() === "y") {
 
   const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
 
-  console.log("Your ice cream is being made. Please wait...");
-
   console.log("\nYour ice cream:");
-  console.log(`Cone: ${orderedIceCream.cone[0]} - $${orderedIceCream.cone[1]}`);
+  console.log(`Cone: ${orderedIceCream.cone[0]}`);
 
   if (orderedIceCream.fruit) {
-    console.log(`Flavor: ${orderedIceCream.fruit.slice(0, -5)} - $${orderedIceCream.fruit.slice(-4)}`);
+    console.log(`Flavor: ${orderedIceCream.fruit[0]}`);
   }
   if (orderedIceCream.savory) {
-    console.log(`Flavor: ${orderedIceCream.savory.slice(0, -5)} - $${orderedIceCream.savory.slice(-4)}`);
+    console.log(`Flavor: ${orderedIceCream.savory[0]}`);
   }
   if (orderedIceCream.chocolate) {
-    console.log(`Flavor: ${orderedIceCream.chocolate.slice(0, -5)} - $${orderedIceCream.chocolate.slice(-4)}`);
+    console.log(`Flavor: ${orderedIceCream.chocolate[0]}`);
   }
 
   console.log(`Total: $${helpers.getTotalCost(orderedIceCream)}\n`);
 
-  console.log("Your ice cream is ready!");
-  orderedIceCream.showInfo();
-  console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
 
  
 
