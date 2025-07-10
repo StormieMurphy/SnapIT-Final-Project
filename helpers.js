@@ -48,7 +48,7 @@ const promptUser = (promptMsgOne, promptMsgTwo, menuNumbers) => {
 
 // // Ensure the choice is a single character and is included in the menu numbers.
 
-  while (!menuNumbers.includes(choice) || choice === "3") 
+  while (!menuNumbers.includes(choice) || choice === "") 
   {
     choice = prompt(promptMsgTwo);
   }
