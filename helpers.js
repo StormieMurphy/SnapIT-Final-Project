@@ -46,12 +46,9 @@ const showMenuWithoutPrice = (itemList) => {
 const promptUser = (promptMsgOne, promptMsgTwo, menuNumbers) => {
   let choice = prompt(promptMsgOne);
 
-  while (choice === "") {
-    choice = prompt(promptMsgTwo);
-  }
 // // Ensure the choice is a single character and is included in the menu numbers.
 
-  while (!menuNumbers.includes(choice)) 
+  while (!menuNumbers.includes(choice) || choice === "3") 
   {
     choice = prompt(promptMsgTwo);
   }
