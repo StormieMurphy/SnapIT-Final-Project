@@ -116,6 +116,8 @@ exports.chooseYourFruit = () => {
 // Read the fruit_flavors.json file and split it into an array of flavor options.
 const fruitList = Object.entries(fruit);
 
+  const menuNumbers = showMenu(fruit_flavors);
+
 //   // Prompt the user for their choice, ensuring it matches the menu numbers.
   const fruitChoice = promptUser(
     "Please choose your flavor: ",
