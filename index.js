@@ -49,9 +49,9 @@ while (userInput.toLowerCase() === "y") {
   let savory = "";
   let chocolate = "";
 
-  if (type[0] === "Fruit") {
+  if (type === "Fruit") {
     fruit = chooseYourFruit();
-  } else if (type[0] === "Savory") {
+  } else if (type === "Savory") {
     savory = chooseYourSavory();
   } else {
     chocolate = chooseYourChocolate();
