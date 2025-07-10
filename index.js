@@ -55,9 +55,9 @@ while (userInput.toLowerCase() === "y") {
 
   const cone = chooseYourCone();
 
-  const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
+  // const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
 
-  console.log("Your ice cream is being made. Please wait...");
+  // console.log("Your ice cream is being made. Please wait...");
 
   setTimeout(() => {
     console.log("Your ice cream is ready!");
@@ -80,9 +80,9 @@ while (userInput.toLowerCase() === "y") {
 
 // Instantiate a new iceCream object with the user's choices.
 
-  // const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
+const orderedIceCream = new iceCream(coneChoice, fruitChoice, savoryChoice, chocolateChoice);
 
-  // console.log("Your ice cream is being made. Please wait...");
+console.log("Your ice cream is being made. Please wait...");
 
 
 // Simulate a delay to mimic the ice cream preparation time.
