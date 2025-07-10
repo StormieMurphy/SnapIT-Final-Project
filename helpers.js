@@ -17,7 +17,7 @@ const showMenu = (itemList) => {
 
   for (index = 0; index < itemList.length; index++) {
     const arr = [...itemList[index]];
-    arr.splice(1, 0, " - $");
+    arr.splice(1, 0, "  - $");
     menuNumbers += (index + 1).toString();
     console.log(`${index + 1}. ${arr.join("")}`);
   }
@@ -27,6 +27,26 @@ const showMenu = (itemList) => {
 
   return menuNumbers;
 };
+
+const showMenuWithoutPrice = (itemList) => {
+  let menuNumbers = [];
+  console.log();
+
+
+// // Loop through the itemList and format each item for display.
+
+  for (index = 0; index < itemList.length; index++) {
+    const arr = [...itemList[index]];
+    arr.splice(1, 0, " ");
+    menuNumbers += (index + 1).toString();
+    console.log(`${index + 1}. ${arr.join("")}`);
+  }
+  console.log();
+
+// // Return the string of menu numbers.
+
+  return menuNumbers;
+}
 
 // // Function to prompt the user for input and validate it against the menu numbers.
 
@@ -78,7 +98,7 @@ exports.chooseYourFlavorType = () => {
 
   //Show the menu and prompt the user to choose a flavor type.
 
-  const menuNumbers = showMenu(types);
+  const menuNumbers = showMenuWithoutPrice(types);
   const typeChoice = promptUser(
   "Which flavor would you like? ",
   "Please enter only the numbers on the menu: ",
