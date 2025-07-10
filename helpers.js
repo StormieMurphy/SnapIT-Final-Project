@@ -123,8 +123,7 @@ const fruitList = Object.entries(fruit);
     menuNumbers
   );
 
-const [name, price] = fruitList[parseInt(fruitChoice) - 1];
-return `${name} - $${price}`;
+return fruit_flavors[parseInt(fruitChoice) - 1];
 };
 
 //catch (error) 
@@ -147,7 +146,7 @@ exports.chooseYourSavory = () => {
 
 //  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-  return savoryList[parseInt(savoryChoice) - 1];
+  return savory_flavors[parseInt(savoryChoice) - 1];
 };
 // // // Show the menu and prompt the user to choose chocolate/other flavor.
 exports.chooseYourChocolate = () => {
@@ -165,7 +164,7 @@ exports.chooseYourChocolate = () => {
 
 //  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-  return chocolateChoice;
+  return chocolate_and_other_flavors[parseInt(chocolateChoice) - 1];
 };
 
 // Function to calculate the total cost of the ordered cone.
