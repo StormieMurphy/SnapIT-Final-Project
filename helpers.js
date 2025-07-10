@@ -31,10 +31,6 @@ const showMenu = (itemList) => {
 const showMenuWithoutPrice = (itemList) => {
   let menuNumbers = [];
   console.log();
-
-
-// // Loop through the itemList and format each item for display.
-
   for (index = 0; index < itemList.length; index++) {
     const arr = [...itemList[index]];
     arr.splice(1, 0, " ");
@@ -42,9 +38,6 @@ const showMenuWithoutPrice = (itemList) => {
     console.log(`${index + 1}. ${arr.join("")}`);
   }
   console.log();
-
-// // Return the string of menu numbers.
-
   return menuNumbers;
 }
 
@@ -53,7 +46,9 @@ const showMenuWithoutPrice = (itemList) => {
 const promptUser = (promptMsgOne, promptMsgTwo, menuNumbers) => {
   let choice = prompt(promptMsgOne);
 
-
+  while (choice === "") {
+    choice = prompt(promptMsgTwo);
+  }
 // // Ensure the choice is a single character and is included in the menu numbers.
 
   while (!menuNumbers.includes(choice)) 
@@ -62,6 +57,7 @@ const promptUser = (promptMsgOne, promptMsgTwo, menuNumbers) => {
   }
   return choice;
 };
+
 
 // // Function to check if the input is a valid 'Y' or 'N'.
 
