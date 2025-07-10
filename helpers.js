@@ -168,9 +168,18 @@ exports.chooseYourChocolate = () => {
 // Function to calculate the total cost of the ordered cone.
 exports.getTotalCost = (orderedIceCream) => {
   const coneCost = parseFloat(orderedIceCream.cone[1]);
-  const fruitCost = parseFloat(orderedIceCream.fruit.slice(-4));
-  const savoryCost = parseFloat(orderedIceCream.savory.slice(-4));
-  const chocolateCost =  parseFloat(orderedIceCream.chocolate.slice(-4));
-
-  const total = coneCost + fruitCost + savoryCost + chocolateCost;
-return total.toFixed(2);}
+  
+  let flavorCost = 0;
+  
+  // Check which flavor type exists and get its cost
+  if (orderedIceCream.fruit) {
+    flavorCost = parseFloat(orderedIceCream.fruit[1]);
+  } else if (orderedIceCream.savory) {
+    flavorCost = parseFloat(orderedIceCream.savory[1]);
+  } else if (orderedIceCream.chocolate) {
+    flavorCost = parseFloat(orderedIceCream.chocolate[1]);
+  }
+  
+  const total = coneCost + flavorCost;
+  return total.toFixed(2);
+}
