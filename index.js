@@ -15,7 +15,7 @@ const iceCream = require("./IceCream.js");
 // Define necessary variables for the program.
 const shopTitle =
   "==================================" +
-  "\n||\t\t\t\t\t\t||\n||\tLISA\'s ICE CREAM\t||\n||\t\t\t\t||\n" +
+  "\n||\t\t\t\t||\n||\tLISA\'s ICE CREAM\t||\n||\t\t\t\t||\n" +
   "==================================";
 const welcomeStr = "Welcome to Lisa's Ice Cream shop!\n";
 
