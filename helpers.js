@@ -15,7 +15,7 @@ const showMenu = (itemList) => {
 
 // // Loop through the itemList and format each item for display.
 
-  for (index = 0; index < itemList.length; index++) {
+  for (let index = 0; index < itemList.length; index++) {
     const arr = [...itemList[index]];
     arr.splice(1, 0, " - $");
     menuNumbers += (index + 1).toString();
@@ -36,7 +36,8 @@ const promptUser = (promptMsgOne, promptMsgTwo, menuNumbers) => {
 
 // // Ensure the choice is a single character and is included in the menu numbers.
 
-while (!menuNumbers.includes(choice)) {
+  while (!menuNumbers.includes(choice)) 
+  {
     choice = prompt(promptMsgTwo);
   }
   return choice;
@@ -63,15 +64,15 @@ exports.chooseYourCone = () => {
     menuNumbers
   );
 
-//  // If the user chooses a cone from the menu's number, return the selected cone.
+  return cones[parseInt(coneChoice) - 1]; 
 
-return coneChoice;
+//  // If the user chooses a cone from the menu's number, return the selected cone.
+  //return coneChoice;
 };
 
 //  // Function to choose flavor category (fruit, savory, chocolate and other) from the available options.
 
 exports.chooseYourFlavorType = () => {
-
   //Convert the flavor type object into an array of entries and display the menu.
 
   const types = Object.entries(type);
@@ -84,14 +85,15 @@ exports.chooseYourFlavorType = () => {
   "Please enter only the numbers on the menu: ",
   menuNumbers
   );
-
-  return typeChoice;
+  //returns just the flavor category name
+  return types[parseInt(typeChoice) - 1][0];
 
 };
 
 // // Convert the chosen flavor category object into an array of entries and display the menu. Make sure it displays a different menu depending on what flavor category the user chooses.
 // // Show the menu and prompt the user to choose fruit flavor.
 exports.chooseYourFruit = () => {
+
 //   // Convert the fruit object into an array of entries and display the menu.
   const fruit_flavors = Object.entries(fruit);
 
@@ -105,8 +107,10 @@ const fruitList = Object.entries(fruit);
     menuNumbers
   );
 
-  return fruitList[parseInt(fruitChoice) - 1];
+const [name, price] = fruitList[parseInt(fruitChoice) - 1];
+return `${name} - $${price}`;
 };
+
 //catch (error) 
 {
   console.log("Error reading fruit_flavors.json file!");
@@ -127,7 +131,7 @@ exports.chooseYourSavory = () => {
 
 //  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-return savoryList[parseInt(savoryChoice) - 1];
+  return savoryList[parseInt(savoryChoice) - 1];
 };
 // // // Show the menu and prompt the user to choose chocolate/other flavor.
 exports.chooseYourChocolate = () => {
@@ -148,24 +152,12 @@ exports.chooseYourChocolate = () => {
   return chocolateChoice;
 };
 
-//calculate the price of the icecream shop.
+// Function to calculate the total cost of the ordered cone.
 exports.getTotalCost = (orderedIceCream) => {
-  let flavorCost = 0;
+  const coneCost = parseFloat(orderedIceCream.cone[1]);
+  const fruitCost = parseFloat(orderedIceCream.fruit.slice(-4));
+  const savoryCost = parseFloat(orderedIceCream.savory.slice(-4));
+  const chocolateCost =  parseFloat(orderedIceCream.chocolate.slice(-4));
 
-  // Check if it's a Fruit flavor
-  if (orderedIceCream.fruit) {
-    flavorCost = parseFloat(orderedIceCream.fruit.slice(1));
-  }
-  // Else check if it's a Savory flavor
-  else if (orderedIceCream.savory) {
-    flavorCost = parseFloat(orderedIceCream.savory.slice(1));
-  }
-  // Else check if it's a Chocolate flavor
-  else if (orderedIceCream.chocolate) {
-    flavorCost = parseFloat(orderedIceCream.chocolate.slice(1));
-  }
-
-  // Calculate the total cost like bun + cheese + meat + veggies
-  
-    return (parseFloat(orderedIceCream.cone[1]) + flavorCost).toFixed(2); // return as string with 2 decimals
-};
+  const total = coneCost + fruitCost + savoryCost + chocolateCost;
+return total.toFixed(2);}
