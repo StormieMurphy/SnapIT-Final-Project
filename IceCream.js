@@ -41,9 +41,9 @@ class iceCream {
   showInfo() {
     const cone = this.#cone[0];
     const type = this.#type[0];
-    const fruit = this.#fruit.slice(0, -5);
-    const savory = this.#savory.slice(0, -5);
-    const chocolate = this.#chocolate.slice(0, -5);
+    const fruit = this.#fruit ? this.#fruit[0] : null;
+    const savory = this.#savory ? this.#savory[0] : null;
+    const chocolate = this.#chocolate ? this.#chocolate[0] : null;
 
    // Log the ice cream details to the console
 

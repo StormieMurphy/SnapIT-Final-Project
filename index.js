@@ -1,3 +1,5 @@
+const helpers = require('./helpers');
+
 // Import external packages, modules, and functions. prompt-sync is an external package. You need to execute `npm install prompt-sync@4.2.0` in the terminal to install it.
 const prompt = require("prompt-sync")({ sigint: true });
 const {
@@ -55,15 +57,30 @@ while (userInput.toLowerCase() === "y") {
 
   const cone = chooseYourCone();
 
-  // const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
+  const orderedIceCream = new iceCream(cone, type, fruit, savory, chocolate);
 
-  // console.log("Your ice cream is being made. Please wait...");
+  console.log("Your ice cream is being made. Please wait...");
 
-  setTimeout(() => {
-    console.log("Your ice cream is ready!");
-    orderedIceCream.showInfo();
-    console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
-  }, 2000);
+  console.log("\nYour ice cream:");
+  console.log(`Cone: ${orderedIceCream.cone[0]} - $${orderedIceCream.cone[1]}`);
+
+  if (orderedIceCream.fruit) {
+    console.log(`Flavor: ${orderedIceCream.fruit.slice(0, -5)} - $${orderedIceCream.fruit.slice(-4)}`);
+  }
+  if (orderedIceCream.savory) {
+    console.log(`Flavor: ${orderedIceCream.savory.slice(0, -5)} - $${orderedIceCream.savory.slice(-4)}`);
+  }
+  if (orderedIceCream.chocolate) {
+    console.log(`Flavor: ${orderedIceCream.chocolate.slice(0, -5)} - $${orderedIceCream.chocolate.slice(-4)}`);
+  }
+
+  console.log(`Total: $${helpers.getTotalCost(orderedIceCream)}\n`);
+
+  console.log("Your ice cream is ready!");
+  orderedIceCream.showInfo();
+  console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
+
+ 
 
   userInput = prompt("Would you like to buy another one? y or n: ");
   while (!checkYorN(userInput)) {
@@ -87,8 +104,8 @@ console.log("Your ice cream is being made. Please wait...");
 
 // Simulate a delay to mimic the ice cream preparation time.
 
-//  setTimeout(() => {
-//     console.log("Your ice cream is ready!");
-//     orderedIceCream.showInfo();
-//     console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
-//   }, 3000);
+ setTimeout(() => {
+    console.log("Your ice cream is ready!");
+    orderedIceCream.showInfo();
+    console.log(`\nTotal cost: $${getTotalCost(orderedIceCream)}`);
+  }, 3000);

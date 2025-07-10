@@ -9,7 +9,7 @@ const prompt = require("prompt-sync")({ sigint: true });
 // // Function to display the menu and return the menu numbers as a string. This function also serves the concept of DRY (Don't Repeat Yourself) by avoiding code duplication.
 
 const showMenu = (itemList) => {
-  let menuNumbers = "";
+  let menuNumbers = [];
   console.log();
 
 
@@ -36,7 +36,7 @@ const promptUser = (promptMsgOne, promptMsgTwo, menuNumbers) => {
 
 // // Ensure the choice is a single character and is included in the menu numbers.
 
-  while (!(menuNumbers.includes(choice) && choice.length == 1)) {
+while (!menuNumbers.includes(choice)) {
     choice = prompt(promptMsgTwo);
   }
   return choice;
@@ -65,7 +65,7 @@ exports.chooseYourCone = () => {
 
 //  // If the user chooses a cone from the menu's number, return the selected cone.
 
-  return coneChoice;
+return coneChoice;
 };
 
 //  // Function to choose flavor category (fruit, savory, chocolate and other) from the available options.
@@ -105,8 +105,7 @@ const fruitList = Object.entries(fruit);
     menuNumbers
   );
 
-const [name, price] = fruitList[parseInt(fruitChoice) - 1];
-return `${name} - $${price}`;
+  return fruitList[parseInt(fruitChoice) - 1];
 };
 //catch (error) 
 {
@@ -128,7 +127,7 @@ exports.chooseYourSavory = () => {
 
 //  // If the user chooses a flavor from the menu's number, return the selected flavor.
 
-  return savoryChoice;
+return savoryList[parseInt(savoryChoice) - 1];
 };
 // // // Show the menu and prompt the user to choose chocolate/other flavor.
 exports.chooseYourChocolate = () => {
@@ -149,19 +148,24 @@ exports.chooseYourChocolate = () => {
   return chocolateChoice;
 };
 
+//calculate the price of the icecream shop.
 exports.getTotalCost = (orderedIceCream) => {
-  const coneCost = parseFloat(orderedIceCream.cone[1]);
   let flavorCost = 0;
 
+  // Check if it's a Fruit flavor
   if (orderedIceCream.fruit) {
-    flavorCost += parseFloat(orderedIceCream.fruit.slice(-4));
+    flavorCost = parseFloat(orderedIceCream.fruit.slice(1));
   }
-  if (orderedIceCream.savory) {
-    flavorCost += parseFloat(orderedIceCream.savory.slice(-4));
+  // Else check if it's a Savory flavor
+  else if (orderedIceCream.savory) {
+    flavorCost = parseFloat(orderedIceCream.savory.slice(1));
   }
-  if (orderedIceCream.chocolate) {
-    flavorCost += parseFloat(orderedIceCream.chocolate.slice(-4));
+  // Else check if it's a Chocolate flavor
+  else if (orderedIceCream.chocolate) {
+    flavorCost = parseFloat(orderedIceCream.chocolate.slice(1));
   }
 
-  return (coneCost + flavorCost).toFixed(2);
+  // Calculate the total cost like bun + cheese + meat + veggies
+  
+    return (parseFloat(orderedIceCream.cone[1]) + flavorCost).toFixed(2); // return as string with 2 decimals
 };
